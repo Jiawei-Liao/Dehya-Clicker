@@ -32,9 +32,6 @@
             top: 20%;
             left: 60%;
             display: none;
-            opacity: 1;
-            transform: translate(-50%, -50%);
-            transition: opacity 0.5s;
         }
     </style>
 </head>
@@ -69,10 +66,9 @@
         playSqueak();
         ++counter;
         overlayImage.style.display = "block";
-        overlayImage.style.opacity = "1";
         setTimeout(function() {
-            overlayImage.style.opacity = "0";
-        }, 500);
+            overlayImage.style.display = "none";
+        }, 100);
     }
 
     function playSqueak()
