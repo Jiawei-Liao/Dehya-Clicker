@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Dehya Clicker</title>
+    <style>
+        * {
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+        .imgbox {
+            display: grid;
+            height: 100%;
+        }
+        .center-fit {
+            max-width: 100%;
+            margin: auto;
+        }
+        .default {
+            display: block;
+        }
+        .right {
+            display: none;
+        }
+        .left {
+            display: none;
+        }
+        .dmg {
+            position: absolute;
+            top: 20%;
+            left: 60%;
+            display: none;
+            opacity: 1;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="imgbox">
+        <img id="default" class="default center-fit" src="img/Default.png" onclick="punch()" />    
+        <img id="right" class="right center-fit" src="img/Right.png" onclick="punch()" />
+        <img id="left" class="left center-fit" src="img/Left.png" onclick="punch()" />
+        <img id="dmg" class="dmg" src="img/1dmg.png" onclick="punch()"/>
+    </div>
+</body>
+
+</html>
+
+<script>
+    let counter = 0;
+
+    function punch() {
+        let defaultimg = document.getElementById("default");
+        let punchimg = document.getElementById("right");
+        let overlayImage = document.getElementById("dmg");
+        if (counter % 2 == 0) {
+            punchimg = document.getElementById("left");
+        }
+        defaultimg.style.display = "none";
+        punchimg.style.display = "block";
+        setTimeout(function () {
+            punchimg.style.display = "none";
+            defaultimg.style.display = "block";
+        }, 30);
+        playSqueak();
+        ++counter;
+        overlayImage.style.display = "block";
+        overlayImage.style.opacity = "1";
+        setTimeout(function() {
+            overlayImage.style.opacity = "0";
+        }, 500);
+    }
+
+    function playSqueak()
+    {
+        var audio = new Audio("audio/squeak.mp3");
+        audio.play();
+    }
+</script>
