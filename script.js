@@ -1,6 +1,6 @@
 // variables
 let slimeParticles = 0
-let atk = 10000
+let atk = 1
 let cr = 5
 let cd = 50
 let pyroDmgBonus = 0
