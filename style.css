@@ -1,0 +1,121 @@
+@font-face {
+    font-family: "genshin-font";
+    src: url("HYWenHei-85W.ttf") format("truetype");
+}
+
+body {
+    background-image: url("img/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin:0;
+}
+
+.genshin-font {
+    font-family: "genshin-font";
+}
+
+.upgrade {
+    width: 100%;
+    height: 19vh;
+    border: 2px solid;
+    border-radius: 20px;
+    border-color:red;
+    text-align: center;
+    margin-top: 2vh;
+}
+
+.slime-particles {
+    width: 100%;
+    height: 7vh;
+    border: 2px solid;
+    border-radius: 20px;
+    border-color:rgb(69, 207, 241);
+    text-align: center;
+}
+
+.upgrades {
+    width: 20%;
+    height:100%;
+    float: left;
+    margin:2vh;
+    padding:0;
+}
+
+.game {
+    width: 76%;
+    height:100vh;
+    float: right;
+}
+
+.game img {
+    width: 100%;
+    height:100%;
+    object-fit: fill;
+}
+
+.default {
+    display: block;
+}
+.right {
+    display: none;
+}
+.left {
+    display: none;
+}
+
+.reduce-line1 {
+    line-height: 0.7;
+}
+
+.reduce-line {
+    line-height: 0.3;
+}
+
+.dmg-indicator {
+    position: absolute;
+    bottom: 60vh;
+    left: 130vh;
+    font-size: 7vh;
+    display: none;
+    color: #FE9805;
+    text-shadow: 1px 1px 0 black,
+                 -1px -1px 0 black,
+                 1px -1px 0 black,
+                 -1px 1px 0 black;
+}
+
+.button {
+    background-color: #EA4C89;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 60px;
+    width: 130px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button.red {
+    background-color: #ff0000;
+}
+
+.button.green {
+    background-color: #26c026;
+}
