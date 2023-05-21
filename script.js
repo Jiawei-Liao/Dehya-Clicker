@@ -1,11 +1,14 @@
 // variables
 let slimeParticles = 0
 let atk = 1
-let cr = 50
+let cr = 5
 let cd = 50
 let pyroDmgBonus = 0
 let upgradeCost = 10
 let scaling = 0.1
+
+let real = false
+let realScaling = 0.0000001
 
 // setup buttons
 let buttons = document.querySelectorAll("button");
@@ -28,6 +31,9 @@ buttons.forEach(function (button) {
 function punch() {
     let dmgIndicator = document.getElementById("dmg-indicator");
     dmg = Math.ceil(atk * (1 + pyroDmgBonus / 100) * scaling);
+    if (real) {
+        dmg = Math.ceil(dmg * realScaling)
+    }
     crit = cr > Math.random() * 100
     if (crit) {
         dmg = Number((dmg * (1 + cd / 100)).toFixed(0));
@@ -129,4 +135,8 @@ function upgradePyroDmgBonus() {
             document.getElementById("pyro dmg bonus").innerHTML = `Current: ${pyroDmgBonus}%`
         }, 1);
     }
+}
+
+function hmm(){
+    real = !real
 }
