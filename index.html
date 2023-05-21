@@ -42,15 +42,29 @@
             </div>
             <button class="button" onclick="upgradePyroDmgBonus()">UPGRADE <br>Cost: 10</button>
         </div> 
-        <div class="toggle">
-            <button class="hmm" onclick="hmm()">???</button>
-        </div> 
+        <img class="hmm" src="img/dehya emote.png" onclick="hmm()" />   
     </div>
-    <div class="game">
+    <div class="game" onclick="punch()" >
         <img id="default" class="default" src="img/Default.png" onclick="punch()" />    
         <img id="right" class="right" src="img/Right.png" onclick="punch()" />
         <img id="left" class="left" src="img/Left.png" onclick="punch()" />
+        <div class="eye-glow1-div">
+            <img id="eye-glow1" class="eye-glow1" src="img/omae wa mou shindeiru.png" onclick="punch()" />
+        </div>
+        <div class="eye-glow2-div">
+            <img id="eye-glow2" class="eye-glow2" src="img/omae wa mou shindeiru.png" onclick="punch()" />
+        </div>
         <div id="dmg-indicator" class="dmg-indicator">1</div>
+        <div class="slime-title"><h3>Hydro Slime, The Devourer of Dehyas</h3></div>
+        <div class="slime-max-hp" id="slime-max-hp">10000</div>
+        <div class="slime-hp" id="slime-hp">10000</div>
+        <div class="health-bar" data-total="10000" data-value="10000">
+            <div class="bar">
+  	            <div class="hit"></div>
+            </div>
+        </div>
+  </div>
+</div>
     </div>
     <script src="script.js"></script>
 </body>

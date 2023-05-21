@@ -1,6 +1,6 @@
 // variables
 let slimeParticles = 0
-let atk = 1
+let atk = 10000
 let cr = 5
 let cd = 50
 let pyroDmgBonus = 0
@@ -9,6 +9,8 @@ let scaling = 0.1
 
 let real = false
 let realScaling = 0.0000001
+
+let hp = 10000
 
 // setup buttons
 let buttons = document.querySelectorAll("button");
@@ -41,10 +43,47 @@ function punch() {
     dmgIndicator.innerHTML = `${dmg}`;
     displayDmg(crit);
     displayPunch();
+    displayHp(dmg);
     slimeParticles += dmg;
     displaySlimeParticles();
 }
 
+function displayHp(dmg) {
+    let hpBar = document.querySelector('.health-bar');
+    let bar = hpBar.querySelector('.bar');
+    let hit = hpBar.querySelector('.hit');
+
+    hp -= dmg;
+
+    if (hp <= 0) {
+        let eyeGlow1 = document.getElementById("eye-glow1");
+        let eyeGlow2 = document.getElementById("eye-glow2");
+        eyeGlow1.style.display = "block";
+        eyeGlow2.style.display = "block";
+
+        setTimeout(function () {
+            eyeGlow1.style.display = "none";
+            eyeGlow2.style.display = "none";
+        }, 1000);
+        hp = 10000;
+    }
+
+    let barWidth = (hp / 10000) * 100;
+    let hitWidth = (dmg / 10000) * 100 + '%';
+
+    hit.style.width = hitWidth;
+    hpBar.dataset.value = hp;
+
+    
+    setTimeout(function () {
+        hit.style.width = '0';
+        bar.style.width = barWidth + '%';
+    }, 100);
+
+    document.getElementById("slime-hp").innerHTML = `${hp}`
+}
+
+  
 function displayDmg(crit) {
     let dmgIndicator = document.getElementById("dmg-indicator");
     if (crit) {

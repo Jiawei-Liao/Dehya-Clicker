@@ -8,6 +8,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     margin:0;
+    user-select: none;
 }
 
 .genshin-font {
@@ -38,6 +39,7 @@ body {
     height:100%;
     float: left;
     margin:2vh;
+    margin-bottom: 0;
     padding:0;
 }
 
@@ -92,7 +94,6 @@ body {
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
-    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: 500;
     height: 60px;
@@ -120,28 +121,88 @@ body {
     background-color: #26c026;
 }
 
-.toggle {
-    width: 100%;
-    height: 2vh;
-    text-align: center;
-    margin-top: 1vh;
+.hmm {
+    padding-left: 17vh;
+    width: 5vh;
+    height: 5vh;
+    object-fit: fill;
 }
 
-.hmm {
-    display: inline-block;
-    outline: 0;
-    border:0;
-    cursor: pointer;
-    text-decoration: none;
-    position: relative;
-    color: #000;
-    background: #fff;
-    border-radius: 10px;
-    font-weight: 600;
-    box-shadow: rgb(255, 198, 0) -2px -2px 0px 2px, rgb(246, 84, 174) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
-    transition: all 0.2s;
+.slime-title {
+    position: absolute;
+    top: 2vh;
+    left: 130vh;
 }
-.hmm:hover{
-    box-shadow: rgb(246, 84, 174) -2px -2px 0px 2px, rgb(255, 198, 0) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
-    transform: scale(1.01);
+
+.slime-max-hp {
+    position: absolute;
+    top: 10vh;
+    left: 185vh;
+}
+
+.slime-hp {
+    position: absolute;
+    top: 10vh;
+    right: 82vh;
+}
+
+.health-bar {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top: -90vh;
+    left: 70vh;
+    width: 500px;
+    height: 20px;
+    padding: 5px;
+    background: #ddd;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.bar {
+    background: rgb(201, 45, 21);
+    width: 100%;
+    height: 10px;
+    position: relative;
+    
+    transition: width .5s linear;
+}
+  
+.hit {
+    background: rgba(255,255,255,0.6);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0px;
+    
+    transition: width .5s linear;
+}
+
+.eye-glow1-div {
+    position: absolute;
+    bottom: 0vh;
+    right: 30vh;
+    width: 100vh;
+    height: 100vh;
+}
+
+.eye-glow2-div {
+    position: absolute;
+    bottom: 0vh;
+    right: 0vh;
+    width: 100vh;
+    height: 100vh;
+}
+
+.eye-glow1 {
+    display: none;
+}
+
+.eye-glow2 {
+    display: none;
 }
