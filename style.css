@@ -139,14 +139,12 @@ body {
 .slime-max-hp {
     position: absolute;
     top: 50%;
-    right: -50px;
     transform: translateY(-50%);
 }
 
 .slime-hp {
     position: absolute;
     top: 50%;
-    left: -25px;
     transform: translate(-50%, -50%);
     text-align: right;
 }
