@@ -9,6 +9,7 @@ body {
     background-repeat: no-repeat;
     margin:0;
     user-select: none;
+    overflow: hidden;
 }
 
 .genshin-font {
@@ -111,6 +112,7 @@ body {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    z-index: 10;
 }
 
 .button.red {
